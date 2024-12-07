@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+/* mainNav.css */
+
+body {
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Updated class for navigation container */
+.main-nav {
+	width:100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.main-nav a {
+	
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    margin: 0 1px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: #45a049;
+    color: #fff;
+}
