@@ -147,12 +147,21 @@ public class CustomerController {
 		return mv;
 	}
 	@GetMapping("/customerlogout")
-	public ModelAndView customerlogout()
+	public ModelAndView customerlogout(HttpServletRequest request)
 	{
+		HttpSession session = request.getSession(false);
+	    if (session != null) {
+	        session.invalidate();
+	    }
 		ModelAndView mv=new ModelAndView();
 		mv.setViewName("customerLogin");
 		return mv;
 	}
+	
+	
+	
+
+	
 	
 	@PostMapping("checkCustomerLogin")
 	public ModelAndView checkCustomerLogin(HttpServletRequest request)
@@ -167,6 +176,7 @@ public class CustomerController {
 		{
 			
 			HttpSession session=request.getSession();
+			 session.setMaxInactiveInterval(1800);
 			session.setAttribute("customer", customer);
 			mv.setViewName("CustomerHome");
 		}
